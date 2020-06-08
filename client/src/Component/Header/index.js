@@ -29,7 +29,13 @@ const Headerpage = props => {
   };
 
   return (
-    <div className="header-horizontal-main">
+    <div
+      style={{
+        display: Newwidth <= 800 ? "flex" : "block",
+        justifyContent: "space-between"
+      }}
+      className="header-horizontal-main"
+    >
       {Newwidth <= 800 && <Menu />}
       <LogoutOutlined className="logOutButton" onClick={logout} />
     </div>

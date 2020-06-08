@@ -58,7 +58,7 @@ const Sidemenu = props => {
           mode="inline"
           theme="dark"
           style={{
-            marginTop: 10,
+            // marginTop: 10,
             height: Newwidth <= 800 ? "auto" : getHeight
           }}
           inlineCollapsed={collapsed}

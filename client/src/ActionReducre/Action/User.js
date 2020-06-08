@@ -57,3 +57,17 @@ export const loginDone = data => {
     data
   };
 };
+
+export const logoutUser = history => {
+  return async function(dispatch) {
+    axios.get("/api/logout").then(({ data }) => {
+      dispatch(getLogoutDispatch(data));
+      return history.push("/login");
+    });
+  };
+};
+export const getLogoutDispatch = () => {
+  return {
+    type: "LOGOUT_USER"
+  };
+};

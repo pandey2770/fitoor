@@ -30,4 +30,9 @@ route.get("/api/user", (req, res) => {
   res.json(req.user);
 });
 
+route.get("/api/logout", function(req, res) {
+  req.logout();
+  res.sendStatus(200);
+});
+
 module.exports = route;

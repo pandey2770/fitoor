@@ -23,7 +23,7 @@ const Sidemenu = props => {
     return size;
   }
   const [Newwidth, Newheight] = useWindowSize();
-  const getHeight = height - 150 + "px";
+  const getHeight = height - 108 + "px";
 
   useEffect(() => {
     if (Newwidth <= 800) {
@@ -39,14 +39,12 @@ const Sidemenu = props => {
   };
 
   return (
-    <div
-      style={{ width: 256, position: Newwidth <= 800 ? "absolute" : "unset" }}
-    >
+    <div style={{ width: Newwidth <= 800 ? 200 : 256 }}>
       {Newwidth <= 800 && (
         <Button
           type="primary"
           onClick={toggleCollapsed}
-          style={{ marginBottom: 16 }}
+          style={{ marginBottom: 16, height: 50 }}
         >
           {React.createElement(
             collapsed ? MenuUnfoldOutlined : MenuFoldOutlined
@@ -60,7 +58,7 @@ const Sidemenu = props => {
           mode="inline"
           theme="dark"
           style={{
-            marginTop: Newwidth <= 800 ? 10 : 90,
+            marginTop: 10,
             height: Newwidth <= 800 ? "auto" : getHeight
           }}
           inlineCollapsed={collapsed}

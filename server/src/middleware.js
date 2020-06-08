@@ -32,10 +32,7 @@ function loadMiddleWares(app, express) {
   app.post("/api/signUp", User);
   app.post("/api/login", User);
   app.get("/api/user", User);
-  // app.get("/api/logout", isAuthenticated, users);
-  // app.get("/api/getCityName", isAuthenticated, staticData);
-  // app.get("/api/getPinCode", isAuthenticated, staticData);
-  // app.post("/api/uploadStateFile", isAuthenticated, uploads);
+  app.get("/api/logout", isAuthenticated, User);
 }
 
 module.exports = loadMiddleWares;

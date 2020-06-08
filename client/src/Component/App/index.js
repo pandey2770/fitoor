@@ -10,7 +10,7 @@ import Menu from "../Menu";
 import Header from "../Header";
 import "./app.css";
 
-function App() {
+const App = props => {
   const dispatch = useDispatch();
   const { loading } = useSelector(state => state.common);
   const user = useSelector(state => state.myUsers);
@@ -32,7 +32,6 @@ function App() {
     return size;
   }
   const [Newwidth, Newheight] = useWindowSize();
-
   return (
     <div className="backGroundFitoor">
       {(loading || user.user === null || user.user === undefined) && (
@@ -49,7 +48,7 @@ function App() {
         </Switch>
       ) : (
         <div>
-          <Header />
+          <Header props={props} />
           <div style={{ display: "flex" }}>
             {Newwidth > 800 && <Menu />}
             <Switch>
@@ -60,6 +59,6 @@ function App() {
       )}
     </div>
   );
-}
+};
 
 export default withRouter(connect()(App));

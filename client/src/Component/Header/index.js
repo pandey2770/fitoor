@@ -1,7 +1,14 @@
 import React, { useLayoutEffect, useState } from "react";
 import Menu from "../Menu";
+import { LogoutOutlined } from "@ant-design/icons";
+import { Descriptions } from "antd";
+import { logoutUser } from "../../ActionReducre/Action/User";
+import { useDispatch, useSelector } from "react-redux";
+import "./header.css";
 
-const Header = props => {
+const Headerpage = props => {
+  const dispatch = useDispatch();
+
   function useWindowSize() {
     const [size, setSize] = useState([0, 0]);
     useLayoutEffect(() => {
@@ -14,14 +21,19 @@ const Header = props => {
     }, []);
     return size;
   }
+
   const [Newwidth, Newheight] = useWindowSize();
 
+  const logout = () => {
+    dispatch(logoutUser(props.props.history));
+  };
+
   return (
-    <div>
+    <div className="header-horizontal-main">
       {Newwidth <= 800 && <Menu />}
-      test
+      <LogoutOutlined className="logOutButton" onClick={logout} />
     </div>
   );
 };
 
-export default Header;
+export default Headerpage;

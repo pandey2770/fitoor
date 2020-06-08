@@ -48,13 +48,17 @@ const App = props => {
         </Switch>
       ) : (
         <div>
-          <Header props={props} />
-          <div style={{ display: "flex" }}>
-            {Newwidth > 800 && <Menu />}
-            <Switch>
-              <Route path="/" component={Home} />
-            </Switch>
-          </div>
+          {user.user !== null && (
+            <div>
+              <Header props={props} />
+              <div style={{ display: "flex" }}>
+                {Newwidth > 800 && <Menu />}
+                <Switch>
+                  <Route path="/" component={Home} />
+                </Switch>
+              </div>
+            </div>
+          )}
         </div>
       )}
     </div>

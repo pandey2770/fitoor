@@ -1,0 +1,23 @@
+{
+  "name": "fitoor",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "babel-node index.js",
+    "test": "mocha"
+  },
+  "author": "abhishek pandey",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^3.0.7",
+    "cookie-parser": "^1.4.4",
+    "express": "^4.17.1",
+    "express-session": "^1.17.0",
+    "mocha": "^7.2.0",
+    "mongoose": "^5.9.18",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "uuid": "^3.1.0"
+  }
+}

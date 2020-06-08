@@ -1,0 +1,31 @@
+.login-register-main-content {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.03);
+  border-radius: 12px;
+  font-size: 14px;
+  overflow: hidden;
+  width: 350px;
+}
+
+.login-register-container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+}
+.login-content {
+  padding: 35px 40px;
+  width: 100%;
+  background-color: #ffffff !important;
+  text-align: center;
+}
+.login-header {
+  margin-bottom: -15px;
+  font-size: 20px;
+}
+.ant-input {
+  border-radius: 7px !important;
+}
